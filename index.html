@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Amrita ❤️</title>
+<style>
+:root{--pink:#ff7ca8;--rose:#ffb5c8;--ink:#160b1c;--cream:#fff3f5}
+*{box-sizing:border-box}
+body{margin:0;color:var(--cream);font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at top,#512044 0,#1c1028 45%,#080811 100%);min-height:100vh;overflow-x:hidden}
+.heart{position:fixed;bottom:-30px;color:#ff7ca8;opacity:.65;animation:float 9s linear infinite;pointer-events:none}
+@keyframes float{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+main{width:min(720px,92%);margin:0 auto;padding:28px 0 55px}
+.panel{display:none;text-align:center;min-height:72vh;align-items:center;justify-content:center;flex-direction:column;padding:28px 20px;border:1px solid #ff9dbb77;border-radius:28px;background:#140d20e8;box-shadow:0 20px 70px #0007}
+.panel.active{display:flex}
+.kicker{letter-spacing:.18em;text-transform:uppercase;color:#ffc2d2;font-size:.78rem}
+h1{font-size:clamp(2.2rem,8vw,4.5rem);line-height:1.05;margin:18px 0;color:#ffb5cb;text-shadow:0 0 22px #ff4e9a66}
+h2{font-size:clamp(1.8rem,6vw,3rem);margin:12px 0;color:#ffd3df}
+p{font-size:1.05rem;line-height:1.75;max-width:540px}
+.bigheart{font-size:4.5rem;filter:drop-shadow(0 0 20px #ff4d91)}
+button{border:0;border-radius:999px;padding:14px 23px;margin:8px;background:linear-gradient(120deg,#ff7da8,#ffd0d9);color:#29101e;font-weight:750;font-size:1rem;cursor:pointer;box-shadow:0 7px 25px #ff5b9b30}
+button.secondary{background:transparent;border:1px solid #ffb5cb;color:#ffe6ec;box-shadow:none}
+.note{background:#fff0d9;color:#532b36;border-radius:16px;padding:25px;text-align:left;max-width:520px;font-family:Georgia,serif;line-height:1.8;box-shadow:0 10px 30px #0005}
+.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(470px,100%);margin:15px 0}
+.photo{border:1px dashed #ffb5cb;border-radius:18px;min-height:145px;display:flex;align-items:center;justify-content:center;padding:12px;color:#ffd9e3;background:linear-gradient(145deg,#52233e,#21152d)}
+.small{font-size:.83rem;color:#e9bbcf}
+footer{text-align:center;color:#d4a7bc;font-size:.8rem;padding:18px}
+</style>
+</head>
+<body>
+<main>
+<section class="panel active" id="p1">
+<div class="kicker">A little surprise made just for you</div>
+<div class="bigheart">♡</div>
+<h1>Happy Birthday,<br>Amrita ❤️</h1>
+<p>To the girl who makes ordinary days feel special and my world brighter just by being in it.</p>
+<p class="small">November 7 · Your special day ✨</p>
+<button onclick="show(2)">Tap to begin 💗</button>
+</section>
+<section class="panel" id="p2">
+<div class="kicker">Today is all about you</div><h2>Happy Birthday, Amrita 💕</h2>
+<p>You deserve all the kindness, laughter, peace and beautiful little moments this world can offer. I hope this new year of your life brings you closer to every dream in your heart.</p>
+<p>And I hope you never forget how special you are to me. ❤️</p>
+<button onclick="show(3)">Our memories 📸</button><button class="secondary" onclick="show(1)">Back</button>
+</section>
+<section class="panel" id="p3">
+<div class="kicker">Little moments, big feelings</div><h2>Our Memories ❤️</h2>
+<p>Every moment with you is a memory worth keeping. Add your favourite pictures together to make this page even more personal.</p>
+<div class="photo-grid">
+<div class="photo">📷<br>Our favourite photo</div><div class="photo">🌅<br>A beautiful memory</div>
+<div class="photo">🥰<br>A silly moment</div><div class="photo">💞<br>One to remember</div>
+</div>
+<button onclick="show(4)">A letter for you 💌</button><button class="secondary" onclick="show(2)">Back</button>
+</section>
+<section class="panel" id="p4">
+<div class="kicker">From my heart to yours</div><h2>My Dearest Amrita ❤️</h2>
+<div class="note">
+Happy Birthday, Amrita. ❤️<br><br>
+Thank you for being you—for your smile, your kindness, and all the little things that make you wonderfully special. You bring happiness into my life in ways that are hard to put into words.<br><br>
+I hope this year brings you peace when life feels difficult, courage to chase your dreams, and countless reasons to smile. No matter how busy life gets, I hope you always remember how precious you are to me.<br><br>
+Today is your day, but you make so many of my days brighter. Keep smiling, keep dreaming, and keep being the beautiful person you are.<br><br>
+<strong>With all my love, ❤️</strong>
+</div>
+<button onclick="show(5)">One last surprise 🎁</button><button class="secondary" onclick="show(3)">Back</button>
+</section>
+<section class="panel" id="p5">
+<div class="kicker">November 7 · Make a wish</div><div class="bigheart">💖</div><h1>Amrita, you are special</h1>
+<p>I hope your birthday is filled with laughter, love, and little moments that make you feel truly cherished. Happy Birthday, beautiful. 🎂</p>
+<button onclick="burst()">Send a little love ✨</button><p id="wish" aria-live="polite"></p>
+<button class="secondary" onclick="show(1)">Start again ↺</button>
+</section>
+<footer>Made with love for Amrita ❤️ · November 7</footer>
+</main>
+<script>
+function show(n){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById('p'+n).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function burst(){document.getElementById('wish').textContent='Amrita, sending you a million hugs, a thousand kisses, and all my love! ❤️💗💕✨';for(let i=0;i<24;i++){const h=document.createElement('div');h.className='heart';h.textContent=['❤','♡','💗','✨'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.animationDuration=(4+Math.random()*5)+'s';h.style.fontSize=(18+Math.random()*22)+'px';document.body.appendChild(h);setTimeout(()=>h.remove(),9500)}}
+for(let i=0;i<12;i++){const h=document.createElement('div');h.className='heart';h.textContent='♥';h.style.left=Math.random()*100+'vw';h.style.animationDelay=(-Math.random()*9)+'s';h.style.animationDuration=(7+Math.random()*8)+'s';h.style.fontSize=(12+Math.random()*22)+'px';document.body.appendChild(h)}
+</script>
+</body></html>
